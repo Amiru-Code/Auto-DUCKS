@@ -7,6 +7,7 @@ import csv
 import tkinter as tk
 from tkinter import Frame, Label, Button
 
+pytesseract.pytesseract.tesseract_cmd = r"C:Program Files\Tesseract-OCR\tesseract.exe"
 def main():
     buildGUI()
 
