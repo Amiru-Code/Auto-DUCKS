@@ -205,7 +205,14 @@ def executeProgram(numberOfTimes, count, fileName, region, filepath):
                 pyautogui.press('enter')
 
                 #save the file 
-                pyautogui.hotkey('enter')
+                pressSave = scrCoor('save.PNG')
+                pyautogui.click(pressSave)
+                if pressSave is None:
+                    print("save.PNG not found! You might need to get a new screenshot of the clear button. Put it into the same \n directory as this script named c.PNG")
+                    input("Press Enter to end the script...")
+                    exit()
+                print(f"clicked at {pressSave}")
+                time.sleep(3)
 
                 # click the clear button
                 pressClear = scrCoor('c.PNG')
